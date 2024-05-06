@@ -1,8 +1,6 @@
 pandas
 numpy
 streamlit
-plotly.express
-plotly.graph_objects
-plotly.figure_factory
+plotly
 pickle
 openpyxl
