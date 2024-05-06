@@ -375,8 +375,8 @@ with tab5:
 
     with col1:
         # Tỷ lệ xe theo Xuất xứ
-        fig2 = px.pie(df_vis, names='Xuất xứ', title='Tỷ lệ xe theo Xuất xứ')
-        st.plotly_chart(fig2, use_container_width=True)
+        fig6 = px.pie(df_vis, names='Xuất xứ', title='Tỷ lệ xe theo Xuất xứ')
+        st.plotly_chart(fig6, use_container_width=True)
 
     with col2:
         st.markdown("""
@@ -390,11 +390,11 @@ with tab5:
                     trọng cho việc phân tích sâu hơn về hành vi và sở thích của người tiêu dùng trong thị trường xe ô tô cũ
                     """)
     # Số lượng xe theo Kiểu dáng
-    fig1 = px.bar(df_vis['Kiểu dáng'].value_counts().reset_index(),
+    fig7 = px.bar(df_vis['Kiểu dáng'].value_counts().reset_index(),
                     x='index', y='Kiểu dáng',
                     labels={'index':'Kiểu dáng', 'Kiểu dáng':'Số lượng'},
                     title='Số lượng xe theo Kiểu dáng')
-    st.plotly_chart(fig1, use_container_width=True)
+    st.plotly_chart(fig7, use_container_width=True)
     st.markdown("""
                 Biểu đồ cột này thể hiện sự phân bố số lượng xe ô tô cũ theo kiểu dáng trên thị trường. Từ biểu đồ, chúng ta có thể thấy rằng:
 
@@ -410,10 +410,10 @@ with tab5:
                 """)
 
     # Biểu đồ giá xe trung bình theo năm sản xuất
-    fig3 = px.line(df_vis.groupby('Năm sản xuất')['Giá xe'].mean().reset_index(),
+    fig8 = px.line(df_vis.groupby('Năm sản xuất')['Giá xe'].mean().reset_index(),
                     x='Năm sản xuất', y='Giá xe', markers=True,
                     title='Giá xe trung bình theo năm sản xuất')
-    st.plotly_chart(fig3, use_container_width=True)
+    st.plotly_chart(fig8, use_container_width=True)
     st.markdown("""
                 Biểu đồ đường này thể hiện mức độ thay đổi của giá xe trung bình theo từng năm sản xuất, từ năm 2004 đến năm 2024. 
                 Dưới đây là một số điểm nổi bật từ biểu đồ:
@@ -436,11 +436,11 @@ with tab5:
     reversed_data = sorted_data.iloc[::-1]
 
     # Tạo biểu đồ
-    fig4 = px.bar(reversed_data,
+    fig9 = px.bar(reversed_data,
                     y='index', x='Nhãn hiệu', orientation='h',
                     labels={'index':'Nhãn hiệu', 'Nhãn hiệu':'Số lượng'},
                     title='Top 10 hãng xe được ưa chuộng')
-    st.plotly_chart(fig4, use_container_width=True)
+    st.plotly_chart(fig9, use_container_width=True)
     st.markdown("""
                 Biểu đồ cột này trình bày số lượng xe cũ của các hãng xe khác nhau đang được bán trên thị trường xe cũ. 
                 Dựa trên biểu đồ, chúng ta có thể phân tích như sau:
@@ -463,9 +463,9 @@ with tab5:
                 """)
 
     # Phân phối giá xe
-    fig5 = px.histogram(df_vis, x='Giá xe', nbins=30, marginal="box",
+    fig10 = px.histogram(df_vis, x='Giá xe', nbins=30, marginal="box",
                         title='Phân phối giá xe')
-    st.plotly_chart(fig5, use_container_width=True)
+    st.plotly_chart(fig10, use_container_width=True)
     st.markdown("""
                 Biểu đồ phân phối giá xe ô tô cũ này có dạng hình chuông, phản ánh phân phối chuẩn với phần lớn xe cũ tập trung ở khoảng giá 
                 trung bình và số lượng giảm dần khi giá tăng lên hoặc giảm xuống. Dưới đây là phân tích cụ thể:
