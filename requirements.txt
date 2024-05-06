@@ -1,8 +1,6 @@
 streamlit==1.32.0
 python==3.9.12
 openpyxl
-plotly.express
+plotly
 pandas
 numpy
-plotly.figure_factory
-plotly.graph_objects
