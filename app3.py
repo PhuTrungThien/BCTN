@@ -65,11 +65,7 @@ with tab2:
     col1, col2 = st.columns([2, 2])
     with col1:
         # Số lượng xe theo Kiểu dáng
-        fig1 = px.bar(filtered_data['Kiểu dáng'].value_counts().reset_index(),
-                      x='index', y='Kiểu dáng',
-                      labels={'index':'Kiểu dáng', 'Kiểu dáng':'Số lượng'},
-                      title='Số lượng xe theo Kiểu dáng',
-                      color_discrete_sequence=colors)
+        fig1 = px.bar(filtered_data['Kiểu dáng'].value_counts().reset_index(), x='index', y='Kiểu dáng', labels={'index':'Kiểu dáng', 'Kiểu dáng':'Số lượng'}, title='Số lượng xe theo Kiểu dáng', color_discrete_sequence=colors)
         st.plotly_chart(fig1, use_container_width=True)
 
     with col2:
